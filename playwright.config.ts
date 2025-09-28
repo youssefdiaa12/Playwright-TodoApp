@@ -13,6 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  globalSetup: require.resolve('./tests/login.setup.spec.ts'),
   testDir: './tests',
   
   /* Run tests in files in random order. */
@@ -29,7 +30,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     
-   // storageState: "storageState.json",
+   storageState: "storageState.json",
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
