@@ -1,0 +1,11 @@
+{
+"default":
+    {
+        "paths": ["test-results/src/tests/features"],
+        "publishQuiet": true,
+        "requireModule": ["ts-node/register"],
+        "DryRun": true
+    }
+
+
+}
