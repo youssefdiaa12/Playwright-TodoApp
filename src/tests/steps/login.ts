@@ -1,12 +1,13 @@
 import {Given, Then, When} from '@cucumber/cucumber';
 import { expect} from "@playwright/test";
 import { pageFixture } from '../hooks/pageFixture';
+import { setDefaultTimeout } from '@cucumber/cucumber';
+
+setDefaultTimeout(60 * 1000); // 30 seconds
 
 Given('User navigates to the application', async () => {
     await pageFixture.page.goto("https://bookcart.azurewebsites.net/");
 });
-
-
 
   Given('User click on the login link', async () => {
     //span[normalize-space()='Login']

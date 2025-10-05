@@ -6,8 +6,10 @@
   "module": "ESNext",
   "moduleResolution": "NodeNext",
   "scripts": {
-   "build": "tsc",
-"test": "npm run build && cucumber-js --require dist/tests/steps/**/*.js"
+    "clean": "del test-results\\cucumber.json",
+    "build": "tsc",
+    "test": "npm run build && npx cucumber-js --require dist/tests/steps/**/*.js --format json:test-results/cucumber.json",
+    "posttest": "npx ts-node src/helper/reporter.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,7 @@
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.5.0",
+    "multiple-cucumber-html-reporter": "^3.9.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cucumber_1 = require("@cucumber/cucumber");
 const test_1 = require("@playwright/test");
 const pageFixture_1 = require("../hooks/pageFixture");
+const cucumber_2 = require("@cucumber/cucumber");
+(0, cucumber_2.setDefaultTimeout)(60 * 1000); // 30 seconds
 (0, cucumber_1.Given)('User navigates to the application', async () => {
     await pageFixture_1.pageFixture.page.goto("https://bookcart.azurewebsites.net/");
 });
