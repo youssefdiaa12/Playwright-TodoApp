@@ -6,7 +6,6 @@
   "module": "ESNext",
   "moduleResolution": "NodeNext",
   "scripts": {
-    "clean": "del test-results\\cucumber.json",
     "build": "tsc",
     "test": "npm run build && npx cucumber-js --require dist/tests/steps/**/*.js --format json:test-results/cucumber.json",
     "posttest": "npx ts-node src/helper/reporter.ts"
