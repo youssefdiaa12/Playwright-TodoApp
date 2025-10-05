@@ -1,11 +1,11 @@
 {
 "default":
     {
-        "paths": ["test-results/src/tests/features"],
-        "publishQuiet": true,
-        "requireModule": ["ts-node/register"],
-        "DryRun": true
+        "paths": ["src/tests/features/AddToCart.feature" ],
+        "publishQuiet": false,
+        "DryRun": true,
+        "require": ["src/tests/steps/*.ts",
+                     "src/tests/hooks/hooks.ts"],
+        "requireModule": ["ts-node/register"]
     }
-
-
 }

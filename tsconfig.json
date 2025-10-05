@@ -1,12 +1,11 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
- "compilerOptions": {
+  "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "strict": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "types": ["node", "playwright"]
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true
   }
 }

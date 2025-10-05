@@ -3,18 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "module": "ESNext",
+  "moduleResolution": "NodeNext",
   "scripts": {
-    "test": "cucumber-js test"
+   "build": "tsc",
+"test": "npm run build && cucumber-js --require dist/tests/steps/**/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.0",
     "@types/node": "^24.5.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
