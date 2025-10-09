@@ -9,7 +9,7 @@ let context: BrowserContext;
 //Before works like beforeEach hook for Cucumber tests before each scenario
 
 BeforeAll(async function() {
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true });
   
 });
 

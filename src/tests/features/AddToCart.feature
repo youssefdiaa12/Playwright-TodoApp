@@ -5,17 +5,17 @@ Given User navigates to the application
 
 Scenario Outline: User should be able to add a book to the cart after logging in
 
-     Given User click on the login link
+    Given User click on the login link
    
-     When User enter the username as "<username>"
+    When User enter the username as "<username>"
    
-     And User enter the password as "<password>"
+    And User enter the password as "<password>"
    
-     And User search for a "<book>"
+    And User search for a "<book>"
 
-     When User adds the book to the cart
+    When User adds the book to the cart
      
-     Then The Cart badge should be updated
+    Then The Cart badge should be updated
 
      Examples:
        | username        | password  | book       |

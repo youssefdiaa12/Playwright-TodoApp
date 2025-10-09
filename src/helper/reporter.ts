@@ -11,10 +11,10 @@ report.generate({
             name: "chrome",
             version: "112",
         },
-        device: "Koushik - PC",
+        device: "Dada - PC",
         platform: {
             name: "Windows",
-            version: "10",
+            version: "11",
         },
     },
     customData: {

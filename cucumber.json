@@ -2,6 +2,7 @@
 "default":
     {
         "paths": [
+        "src/tests/features/AddToCart.feature",
         "src/tests/features/login.feature"
     ],
         "publishQuiet": false,
@@ -11,7 +12,27 @@
         "requireModule": ["ts-node/register"],
         "format":[
             "progress-bar",
-            "html: test-results/cucumber-report.html",
-            "json: test-results/cucumber.json"        ]
+            "html:test-results/cucumber-report.html",
+            "json:test-results/report.json",
+            "rerun:@rerun.txt"
+        ],
+            "parallel":2,
+            "retry":1
+    },
+    "rerun":
+    {
+        "publishQuiet": false,
+        "DryRun": true,
+        "require": ["src/tests/steps/*.ts",
+                     "src/tests/hooks/hooks.ts"],
+
+        "requireModule": ["ts-node/register"],
+        "format":[
+            "progress-bar",
+            "html:test-results/cucumber-report.html",
+            "json:test-results/report.json",
+            "rerun:@rerun.txt"
+        ],
+            "parallel":2
     }
 }
