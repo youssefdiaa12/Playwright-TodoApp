@@ -13,8 +13,8 @@ const test_1 = require("@playwright/test");
  * @see https://playwright.dev/docs/test-configuration
  */
 exports.default = (0, test_1.defineConfig)({
-    globalSetup: './test-results/src/tests/steps/login.setup.spec.ts',
-    testDir: './tests',
+    globalSetup: './src/tests/login.setup.spec.ts',
+    testDir: './src/tests',
     /* Run tests in files in random order. */
     /* Run tests in files in parallel */
     fullyParallel: true,
