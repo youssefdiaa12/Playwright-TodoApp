@@ -3,7 +3,8 @@
     {
         "paths": [
         "src/tests/features/AddToCart.feature",
-        "src/tests/features/login.feature"
+        "src/tests/features/login.feature",
+        "src/tests/features/learning.feature"
     ],
         "publishQuiet": false,
         "DryRun": true,

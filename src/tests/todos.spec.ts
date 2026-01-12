@@ -6,9 +6,7 @@ test.describe("E2E Scenario for completed todos",async()=>{
 
     test.use({storageState:"storageState.json"});
      test.beforeEach("Make sure to be logged in first",async({page})=>{
-        
-         await page.goto("https://qacart-todo.herokuapp.com/login");
-    //     await page.locator("#email").fill("youssefdiaa22@icloud.com");
+        //     await page.locator("#email").fill("youssefdiaa22@icloud.com");
     //     await page.locator('[data-testid="password"]').fill("Serion2005@");
     //     await page.locator("#submit").click();
     //      // alternate way const submit= page.locator(".login-button");

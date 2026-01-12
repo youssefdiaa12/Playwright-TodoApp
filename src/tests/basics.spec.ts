@@ -3,18 +3,20 @@ import { time, timeLog } from 'console';
     // Important note please make sure fully parallel is false.
 
     // Incase of group testcases related to same suite we can use test.describe.
-    test.describe("Login Function",async ()=>{
-
-    // before all will run before all the test cases just one time
+    test.describe("Login Function", ()=>{
+//run global setup
+            
     test.beforeAll("will run before all the test cases for one time",async()=>{
+        
     console.log("I'm before all");
+
     });
 
     test ("Checking Title Page 1",async({page})=>{
         var title = await page.title();
         //QAcart Todo App - Login page
         console.log("Hello "+title);
-        expect(title).toEqual("QAcart Todo App - Login page");
+        expect(title).toEqual("QAcart Todo App - Todos page");
         // or expect(page).toHaveTitle("QAcart Todo App - Login page")
     }
     );
@@ -22,12 +24,12 @@ import { time, timeLog } from 'console';
 
 
    test ("Checking URL Page 1",async({page})=>{
-        await expect(page).toHaveURL("https://qacart-todo.herokuapp.com/login");
+        await expect(page).toHaveURL("https://qacart-todo.herokuapp.com/todos");
     }
     );
 
  test ("Header should be visible by text",async({page})=>{
-        const header = page.locator("text=Login to Application")
+        const header = page.locator("text=Good afternoon youssef");
         // i want it to be case senstive? easy one just make 
         // const header = page.locator('text="Login to Application"')
        await expect(header).toBeVisible();
@@ -72,10 +74,11 @@ import { time, timeLog } from 'console';
     // });
 
     //before each & after each works befor each test case & after each test case
-    test.beforeEach("Will run before each test case",async ({page})=>{
-          await page.goto("https://qacart-todo.herokuapp.com/login");
-    console.log("I'm before each test case");
-});
+    
+//     test.beforeEach("Will run before each test case",async ({page})=>{
+//           await page.goto("https://qacart-todo.herokuapp.com/login");
+//     console.log("I'm before each test case");
+// });
 
     test("Test Case for learning waits",async ({page})=>{
 

@@ -6,21 +6,25 @@
   "module": "ESNext",
   "moduleResolution": "NodeNext",
   "scripts": {
-    "pretest":"npx ts-node src/helper/init.ts",
-    "test": "npx cucumber-js --require dist/tests/steps/**/*.js --format json:test-results/report.json || exit 0",
-    "posttest": "npx ts-node src/helper/reporter.ts",
-    "test:failed": "cucumber-js -p rerun @rerun.txt"
-  },
+    "pretest": "npx ts-node src/helper/init.ts",
+  "test": "npx ts-node --esm node_modules/@playwright/test/cli.js test",
+  "posttest": "npx ts-node src/helper/reporter.ts",
+  "test:failed": "cucumber-js -p rerun @rerun.txt",
+  "test:bdd": "cucumber-js features/**/learning.feature"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^24.5.0",
     "fs-extra": "^11.3.2",
     "multiple-cucumber-html-reporter": "^3.9.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
   }
 }

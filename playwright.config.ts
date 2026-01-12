@@ -13,21 +13,25 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  globalSetup: './test-results/src/tests/steps/login.setup.spec.ts',
-  testDir: './tests',
-  
+  globalSetup: './src/helper/global-setup.ts',
+  testDir: './src/tests',
+   timeout: 60_000,          // overall test timeout
+  expect: { timeout: 10_000 }, // for expect() conditions
   /* Run tests in files in random order. */
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+reporter: [
+    ['list'],                                        // console
+    ['json', { outputFile: 'test-results/report.json' }], // JSON file
+    ['html', { outputFolder: 'playwright-report', open: 'never' }], // HTML report
+  ],  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     
    storageState: "storageState.json",
@@ -43,18 +47,22 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-            headless:false
+            headless:false //headless mode false means browser is visible 
        },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],
+            headless:false //headless mode false means browser is visible
+       },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],
+            headless:true //headless mode true means browser is not visible
+       },
     },
 
     /* Test against mobile viewports. */

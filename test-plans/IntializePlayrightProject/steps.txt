@@ -1,0 +1,17 @@
+Steps to initialize Playwright project
+
+1. npm init playwright@latest using cmd
+2. npm install
+3. npx playwright install
+4. npx playwright test
+
+After installation there's a file named playwright.config.ts
+This file is where you configure your tests Like testDir 
+and testMatch and so on
+Also there's a file named package.json
+This file is where you configure your dependencies
+Like playwright and so on
+
+
+
+await page.getByRole('combobox', { name: 'بحث' }).click();
