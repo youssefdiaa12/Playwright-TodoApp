@@ -1,17 +1,7 @@
-// @ts-check
+
+// playwright.config.ts
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- */
 export default defineConfig({
   globalSetup: './src/helper/global-setup.ts',
   testDir: './src/tests',
@@ -33,16 +23,12 @@ reporter: [
     ['html', { outputFolder: 'playwright-report', open: 'never' }], // HTML report
   ],  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    
-   storageState: "storageState.json",
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    headless: false,
+    ignoreHTTPSErrors: true,
+    baseURL: 'https://deploy-server.iskraemeco.com.eg:4400',
+    storageState: 'storageState.json',
     trace: 'on-first-retry',
   },
-
-  /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
@@ -93,4 +79,3 @@ reporter: [
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
