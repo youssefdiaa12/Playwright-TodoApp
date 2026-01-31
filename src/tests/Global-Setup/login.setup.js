@@ -7,8 +7,8 @@ export default async function globalSetup() {
 
   const browser = await chromium.launch({
     channel: 'msedge',
-    headless: false,         // 👈 show the browser window
-    slowMo: 300              // 👈 slow down actions to see them
+    headless: false,         
+    slowMo: 300              
   });
 
   const context = await browser.newContext({ ignoreHTTPSErrors: true });

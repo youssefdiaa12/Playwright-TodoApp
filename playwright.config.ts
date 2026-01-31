@@ -3,8 +3,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  globalSetup: './src/helper/global-setup.ts',
+ // globalSetup: './src/helper/global-setup.ts',
   testDir: './src/tests',
+ // globalSetup: './src/tests/login.setup.ts',
    timeout: 60_000,          // overall test timeout
   expect: { timeout: 10_000 }, // for expect() conditions
   /* Run tests in files in random order. */
