@@ -1,5 +1,4 @@
     import {test, expect} from '@playwright/test';
-import { time, timeLog } from 'console';
     // Important note please make sure fully parallel is false.
 
     // Incase of group testcases related to same suite we can use test.describe.

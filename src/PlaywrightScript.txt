@@ -1,0 +1,33 @@
+auto running test case using window player, write: npx playwright codegen
+
+Running specific test case with headed mode: npx playwright test -g "heroku" --headed 
+
+Running specific test case with trace : npx playwright test -g "heroku" --trace on
+
+you can find the trace on the test result for each test case.
+                      or
+you can run the trace using: npx playwright show-trace ./ "put the trace viewer path"
+
+"#" means ID  "." means CLASS or [class="class name"]
+
+x-path = //*[@class=""] //div[@id=""]  
+
+x-path using text = ('//*[text()=""]') or text inside specific element //div[text()=""] 
+
+
+to be present page.locator(//*[text()=""]).toHaveCount(1);
+
+to be enabled page.locator(//*[text()=""]).toBeEnabled();
+
+to be disabled page.locator(//*[text()=""]).toBeEnabled();
+
+// check about a text page.locator('//*[@id="input-example"]/button').toHaveText('Enable');
+
+// check about a attribute page.locator('//*[@id="input-example"]/button').toHaveAttribute('Enable');
+
+// check about partial URL (page).toHaveURL(/the-internet.herokuapp/)
+
+// check about Full URL (page).toHaveURL('https://the-internet.herokuapp.com/dynamic_controls')  #should be in single qoutes
+
+// check about partial Title (page).toHaveTitle(/.* The Internet/)
+// check about  Title (page).toHaveTitle('The Internet')

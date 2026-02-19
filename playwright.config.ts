@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
  // globalSetup: './src/helper/global-setup.ts',
-  testDir: './src/tests',
+  testDir: './src/TC',
  // globalSetup: './src/tests/login.setup.ts',
    timeout: 60_000,          // overall test timeout
   expect: { timeout: 10_000 }, // for expect() conditions
@@ -19,17 +19,21 @@ export default defineConfig({
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 reporter: [
+  ['allure-playwright'],
     ['list'],                                        // console
-    ['json', { outputFile: 'test-results/report.json' }], // JSON file
-    ['html', { outputFolder: 'playwright-report', open: 'never' }], // HTML report
+    // ['json', { outputFile: 'test-results/report.json' }], // JSON file
+    // ['html', { outputFolder: 'playwright-report', open: 'never' }], // HTML report
   ],  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
     ignoreHTTPSErrors: true,
     baseURL: 'https://deploy-server.iskraemeco.com.eg:4400',
     storageState: 'storageState.json',
-    trace: 'on-first-retry',
+    trace: 'on',
+    screenshot:'only-on-failure',
+    video:'on'
   },
+  // grep:[RegExp('@smoke')],
   projects: [
     {
       name: 'chromium',
@@ -38,19 +42,19 @@ reporter: [
        },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'],
-            headless:false //headless mode false means browser is visible
-       },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'],
+    //         headless:false //headless mode false means browser is visible
+    //    },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'],
-            headless:true //headless mode true means browser is not visible
-       },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'],
+    //         headless:true //headless mode true means browser is not visible
+    //    },
+    // },
 
     /* Test against mobile viewports. */
     // {

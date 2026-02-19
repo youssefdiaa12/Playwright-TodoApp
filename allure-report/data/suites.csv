@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9541","Login & Cart","chromium","2026-02-17","passed","2026-02-17","E2E Sauce Code","E2E.spec.ts","",""

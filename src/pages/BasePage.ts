@@ -1,14 +1,24 @@
-import { Page } from '@playwright/test';
+import { Page,Locator } from "playwright";
 
-export class BasePage {
-  readonly page: Page;
-  readonly baseUrl = 'https://www.saucedemo.com';
+export default class BasePage {
 
-  constructor(page: Page) {
+protected readonly page:Page;
+
+constructor(page:Page){
     this.page = page;
-  }
+}
 
-  async goto(path = '/') {
-    await this.page.goto(`${this.baseUrl}${path}`);
-  }
+protected async clickOnElement(element: Locator){
+
+    await element.click();
+}
+
+protected async FillField(element: Locator,text:string){
+    await element.fill(text);
+}
+
+public async ScreenShot(filePath:string){
+    await this.page.screenshot({path:filePath})
+}
+
 }
