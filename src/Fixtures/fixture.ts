@@ -4,7 +4,7 @@ import AddToCart from '../Pages/AddToCart'
 
 type pages = {
 loginPage: LoginPage
-addToCart: AddToCart
+addToCartPage: AddToCart
 }
 
 const testPages = baseTest.extend<pages>({
@@ -13,7 +13,7 @@ loginPage: async ({page},use)=>{
  await use(new LoginPage(page));
 },
 
-addToCart: async ({page},use)=>{
+addToCartPage: async ({page},use)=>{
  await use(new AddToCart(page));
 }
 })
