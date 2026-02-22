@@ -1,6 +1,6 @@
 import {test as baseTest} from '@playwright/test'
-import LoginPage from '../Pages/LoginPage'
-import AddToCart from '../Pages/AddToCart'
+import LoginPage from '../pages/LoginPage'
+import AddToCart from '../pages/AddToCart'
 
 type pages = {
 loginPage: LoginPage

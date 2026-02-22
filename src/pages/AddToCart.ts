@@ -1,4 +1,4 @@
-import BasePage from "./BasePage";
+import BasePage from "d://Playwright-TodoApp/src/pages/BasePage";
 
 export default class AddToCart extends BasePage{
 
