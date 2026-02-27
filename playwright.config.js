@@ -18,6 +18,7 @@ exports.default = (0, test_1.defineConfig)({
     /* Run tests in files in random order. */
     /* Run tests in files in parallel */
     fullyParallel: true,
+    headless: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,
     /* Retry on CI only */
