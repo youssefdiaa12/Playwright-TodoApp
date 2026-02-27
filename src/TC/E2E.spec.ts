@@ -1,7 +1,7 @@
 import { Page } from "playwright";
 import {expect, test } from "../Fixtures/fixture";
-import AddToCart from "../Pages/AddToCart";
-import LoginPage from "../Pages/LoginPage";
+import AddToCart from "../pages/AddToCart";
+import LoginPage from "../pages/LoginPage";
 import * as data from '../testData/Data.json'
 
 
