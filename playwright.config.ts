@@ -39,7 +39,6 @@ reporter: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-            headless:false //headless mode false means browser is visible 
        },
     },
 

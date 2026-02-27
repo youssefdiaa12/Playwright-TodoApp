@@ -10,7 +10,7 @@
     "generate:reports": "npx allure generate ./allure-results --clean",
     "pretest": "npm run clean:reports",
     "posttest": "npm run generate:reports",    
-    "script:to:run": "npx playwright test E2E" ,
+    "script:to:run": "npx playwright test E2E",    
     "test": "npm run script:to:run"
   },
   "keywords": [],
