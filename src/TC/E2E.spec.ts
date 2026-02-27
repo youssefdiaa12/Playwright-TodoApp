@@ -9,6 +9,7 @@ import * as data from '../testData/Data.json'
 //loginPage:LoginPage,addToCartPage:AddToCart;
 
 test.beforeEach(async({page})=>{
+   
     await page.goto('https://www.saucedemo.com/');
 
 //page = await browser.newPage();
