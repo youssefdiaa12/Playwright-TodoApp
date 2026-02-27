@@ -26,7 +26,7 @@ reporter: [
     // ['html', { outputFolder: 'playwright-report', open: 'never' }], // HTML report
   ],  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     ignoreHTTPSErrors: true,
     baseURL: 'https://deploy-server.iskraemeco.com.eg:4400',
     storageState: 'storageState.json',
