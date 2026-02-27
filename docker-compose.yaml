@@ -1,0 +1,16 @@
+services:
+  playwright-test:
+    # Name of the service (container) that will run Playwright tests
+    image: playwright-docker
+    # Use the Docker image built from your Dockerfile (tagged as "playwright-docker")
+
+    volumes:
+      - .:/projectHome
+      # Mount the current directory (.) from the host machine into /projectHome inside the container
+      # This allows the container to access your project files and test code
+
+    environment:
+      - commandToRunTests=npx playwright test E2E
+      # Set an environment variable inside the container
+      # This overrides the default CommandToRunTests defined in the Dockerfile
+      # Here, it runs Playwright tests specifically for the "E2E" suite
