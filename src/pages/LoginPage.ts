@@ -1,4 +1,4 @@
-import BasePage from "d://Playwright-TodoApp/src/pages/BasePage";
+import BasePage from "../pages/BasePage";
 
 export  default class LoginPage extends BasePage{
 
