@@ -41,7 +41,7 @@ jobs:
         name: allure-report
         path: allure-report/
         retention-days: 30
-
-
-
-
+    - name: ZAP Scan
+      uses: zaproxy/action-full-scan@v0.13.0
+      with:
+        target: 'https://the-internet.herokuapp.com/'
