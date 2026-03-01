@@ -7,5 +7,7 @@
         "*test.py"
     ],
     "python.testing.pytestEnabled": false,
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": true,
+    "snyk.advanced.organization": "e50eac62-6cc5-44a1-9246-42aa3085637c",
+    "snyk.advanced.autoSelectOrganization": true
 }
