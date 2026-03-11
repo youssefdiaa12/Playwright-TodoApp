@@ -42,11 +42,11 @@ jobs:
         path: allure-report/
         retention-days: 30
 
-        
+
   security:
     needs: test
     name: ZAP Scan
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Run ZAP Full Scan
         uses: zaproxy/action-full-scan@v0.13.0
