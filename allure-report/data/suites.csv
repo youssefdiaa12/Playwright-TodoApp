@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2356","tag test case 1 @smoke","chromium","2026-03-13","passed","2026-03-13","E2E Sauce Code","E2E.spec.ts","",""
+"","2746","tag test case 2 @smoke","chromium","2026-03-13","passed","2026-03-13","E2E Sauce Code","E2E.spec.ts","",""
+"","4770","tag test case @sanity","chromium","2026-03-13","passed","2026-03-13","E2E Sauce Code","E2E.spec.ts","",""
+"","11206","Login & Cart","chromium","2026-03-13","passed","2026-03-13","E2E Sauce Code","E2E.spec.ts","",""
