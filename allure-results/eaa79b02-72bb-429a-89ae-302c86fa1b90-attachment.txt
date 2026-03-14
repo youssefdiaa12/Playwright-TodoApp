@@ -1,0 +1,1 @@
+HTML report was saved into the following directory C:\Users\ysoltan\Downloads\Playwright-TodoApp/reports/accessability-reports//normal accessability.html
